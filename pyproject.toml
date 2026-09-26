@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gh-agent-pr"
+version = "0.1.0"
+description = "Agent evaluating merge confidence on GitHub PRs using rtk gh and Laya"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "laya>=0.1.0",
+    "rich>=13.0.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[project.scripts]
+gh-agent-pr = "gh_agent_pr.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
